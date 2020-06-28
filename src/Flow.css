@@ -1,0 +1,33 @@
+.flow-item {
+    background-color: #FCFAF2;
+    border-radius: 5px;
+    margin: 1em 1em;
+    padding: .5em;
+    box-shadow: 0 2px 5px rgba(0,0,0,.4);
+}
+
+.flow-item a {
+    text-decoration: none;
+    display: block;
+}
+
+.flow-item a:hover {
+    color: #7BA23F;
+}
+
+.flow-item:hover {
+    box-shadow: 0 4px 8px rgba(0,0,0,.4);
+}
+
+.flow-item .title {
+    color: #1C1C1C;
+    font-family: Georgia, serif;;
+    font-size: 25px; 
+    font-weight: normal; 
+}
+
+.flow-item .date {
+    color: #91989F;
+    font-family: sans-serif;
+    font-size: 10px;
+}
