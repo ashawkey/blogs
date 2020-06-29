@@ -16,7 +16,7 @@ function Post(){
       res => res.json()
     ).then(
       res => {
-        setContent(res['body']);
+        setContent(res[0]);
       }
     );
   });

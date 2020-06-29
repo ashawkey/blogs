@@ -2,6 +2,11 @@ import React from 'react';
 import {Link} from "react-router-dom";
 import './Flow.css';
 
+function convertTime(timestamp) {
+  var date = new Date(timestamp * 1000);
+  return date.getFullYear()+'-'+date.getMonth()+'-'+date.getDate()
+}
+
 function Flow(props) {
   return (
     <div className="flow"> 
@@ -17,11 +22,11 @@ function FlowItem(props) {
   // hold single post
   return (
     <div className="flow-item">
-      <Link to={"/blogs/archive/"+props.value['title']} className="title"> 
-        {props.value['title'].slice(0, -3)} 
+      <Link to={"/blogs/archive/"+props.value[0]} className="title"> 
+        {props.value[0].slice(0, -3)} 
       </Link>
       <span className="date"> 
-        {props.value['mtime']+" (created at "+props.value['ctime']+")"} 
+        {convertTime(props.value[1])+" (created at "+convertTime(props.value[2])+")"} 
       </span>
     </div>
   );
