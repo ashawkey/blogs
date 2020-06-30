@@ -1,11 +1,8 @@
 import React from 'react';
-import {Link} from "react-router-dom";
+import {Link} from 'react-router-dom';
 import './Flow.css';
+import {convertTime} from './utils'
 
-function convertTime(timestamp) {
-  var date = new Date(timestamp * 1000);
-  return date.getFullYear()+'-'+date.getMonth()+'-'+date.getDate()
-}
 
 function Flow(props) {
   return (

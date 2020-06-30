@@ -1,52 +1,15 @@
-import React, {useState, useEffect} from 'react';
-import {BrowserRouter as Router, Switch, Route, Link, useHistory} from "react-router-dom";
+import React from 'react';
+import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
 import ScrollToTop from 'react-scroll-up';
 import './App.css';
-import {API_ROOT} from "./const";
 
-import Flow from "./Flow";
+import Home from "./Home"
 import Post from "./Post";
+import SearchBar from "./SearchBar"
 import SearchResults from "./SearchResults"
 
 
-function SearchBar() {
-  // history must be inside router. This component has to be extracted out to work!
-  const history = useHistory();
-  const [keyword, setKeyword] = useState('');
-
-  function handleChange(event) {
-    setKeyword(event.target.value); // here event.target is <input>
-  }
-
-  function handleSubmit(event) {
-    event.preventDefault();
-    history.push("/blogs/search/"+keyword);
-    setKeyword('') // clear input
-  }
-
-  return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" value={keyword} placeholder="Search" onChange={handleChange}/>
-    </form>
-  )
-}
-
 function App() {
-  
-  const [meta, setMeta] = useState([]);
-
-  // fetch all blogs' information
-  useEffect(()=>{
-    // Mount & Update
-    fetch(API_ROOT+"/get_blogs_meta").then(
-      res => res.json()
-    ).then(
-      res => {
-        setMeta(res);
-      }
-    );
-  }, []); // never update
-
   return (
     <div className="App">
       <Router>
@@ -61,7 +24,7 @@ function App() {
           <Switch>
             {/* Home page */}
             <Route exact path="/blogs">
-              <Flow meta={meta}/>
+              <Home />
             </Route>
             {/* Search page */}
             <Route path="/blogs/search/:keyword">
@@ -79,7 +42,7 @@ function App() {
           <hr className="fancy-line" />
         </div>
         <ScrollToTop showUnder={160}>
-          <span className="icon icon-arrow-up2" />
+          <span className="icon icon-circle-up" />
         </ScrollToTop>
         <div className="footer"> 
           @ hawkey
