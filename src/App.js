@@ -1,5 +1,5 @@
 import React from 'react';
-import {BrowserRouter as Router, Switch, Route, Link} from "react-router-dom";
+import {Switch, Route, Link, HashRouter} from "react-router-dom";
 import ScrollToTop from 'react-scroll-up';
 import './App.css';
 
@@ -12,9 +12,9 @@ import SearchResults from "./SearchResults"
 function App() {
   return (
     <div className="App">
-      <Router>
+      <HashRouter>
         <div className="header"> 
-          <Link to="/blogs"> Hawthorn & key </Link>
+          <Link to="/"> Hawthorn & key </Link>
           <div className='search-bar'>
             <SearchBar />
           </div>
@@ -23,15 +23,15 @@ function App() {
           <hr className="fancy-line" />
           <Switch>
             {/* Home page */}
-            <Route exact path="/blogs">
+            <Route exact path="/">
               <Home />
             </Route>
             {/* Search page */}
-            <Route path="/blogs/search/:keyword">
+            <Route path="/search/:keyword">
               <SearchResults />
             </Route>
             {/* Post page */}
-            <Route path="/blogs/archive/:name">
+            <Route path="/archive/:name">
               <Post />
             </Route>
             {/* fallback */}
@@ -47,7 +47,7 @@ function App() {
         <div className="footer"> 
           @ hawkey
         </div>
-      </Router>
+      </HashRouter>
     </div>
   );
 }

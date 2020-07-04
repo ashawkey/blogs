@@ -19,7 +19,7 @@ function FlowItem(props) {
   // hold single post
   return (
     <div className="flow-item">
-      <Link to={"/blogs/archive/"+props.value[0]} className="title"> 
+      <Link to={"/archive/"+props.value[0]} className="title"> 
         {props.value[0].slice(0, -3)} 
       </Link>
       <span className="date"> 

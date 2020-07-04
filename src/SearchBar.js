@@ -14,7 +14,7 @@ function SearchBar() {
 
   function handleSubmit(event) {
     event.preventDefault();
-    history.push("/blogs/search/"+keyword);
+    history.push("/search/"+keyword);
     setKeyword('') // clear input
   }
 
