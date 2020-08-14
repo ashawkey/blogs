@@ -1,1 +1,1 @@
-export const API_ROOT = "https://47.98.40.119";
+export const API_ROOT = "https://www.hawia.xyz/api";
