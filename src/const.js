@@ -1,1 +1,1 @@
-export const API_ROOT = "https://www.hawia.xyz/api";
+export const API_ROOT = "https://www.kiui.moe/api";
